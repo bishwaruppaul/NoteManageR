@@ -69,27 +69,6 @@ if (choice == "o") {
     select_note_name <- paste0(select_note, ".txt")
     shell.exec(select_note_name)
 
-    # Display the notes with the selected tag present
-    # writeLines("\nNotes containing the tag:\n")
-    # cat(paste(note_with_tag), sep = "\n")
-
-    # repeat {
-    #     # Ask user to select a note
-    #     writeLines("\nEnter the name of the note to open: ")
-    #     select_note <- readLines("stdin", n = 1)
-
-    #     # Check whether the name of the note is correct, else ask to enter again
-    #     if (select_note %in% note_with_tag) {
-    #         break
-    #     } else {
-    #         writeLines("\nYou have entered an incorrect/misspelt name.")
-    #     }
-    # }
-
-    # # Open the note
-    # select_note_name <- paste0(select_note, ".txt")
-    # shell.exec(select_note_name)
-
 } else if (choice == "c") {
     # Display tags
     writeLines("\nList of tags in existing notes: ")
