@@ -10,6 +10,8 @@ Why R? Because I love R and use it for my work regularly, and am mostly familiar
 
 I have created a Windows Batch Script to accompany the R Script. It provides a click-and-run functionality; and otherwise the R Script would require you to open a terminal and soruce the script file.
 
+Note management is done via tags. When creating the note, you have the option of adding tag(s) to the note, which will come in handy later to search notes using the Script. Timestamps are also added to the notes in DD MonthAbbrv YYYY, HH:MM AM/PM format when a new note is created. 
+
 
 Disclaimer
 ==========
