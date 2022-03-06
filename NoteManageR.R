@@ -52,26 +52,43 @@ if (choice == "o") {
         }
     }
 
+    # Put notes with tag in a dataframe for selection by user
+    note_df <- as.data.frame(cbind(1:length(note_with_tag), note_with_tag))
+    colnames(note_df) <- c("ID", "Filename")
+
     # Display the notes with the selected tag present
     writeLines("\nNotes containing the tag:\n")
-    cat(paste(note_with_tag), sep = "\n")
+    print(note_df, row.names = FALSE)
 
-    repeat {
-        # Ask user to select a note
-        writeLines("\nEnter the name of the note to open: ")
-        select_note <- readLines("stdin", n = 1)
-
-        # Check whether the name of the note is correct, else ask to enter again
-        if (select_note %in% note_with_tag) {
-            break
-        } else {
-            writeLines("\nYou have entered an incorrect/misspelt name.")
-        }
-    }
+    # Ask user to select a note
+    writeLines("\nEnter the ID of the note to open: ")
+    select_note_id <- as.integer(readLines("stdin", n = 1))
+    select_note <- note_df$Filename[note_df$ID == select_note_id]
 
     # Open the note
     select_note_name <- paste0(select_note, ".txt")
     shell.exec(select_note_name)
+
+    # Display the notes with the selected tag present
+    # writeLines("\nNotes containing the tag:\n")
+    # cat(paste(note_with_tag), sep = "\n")
+
+    # repeat {
+    #     # Ask user to select a note
+    #     writeLines("\nEnter the name of the note to open: ")
+    #     select_note <- readLines("stdin", n = 1)
+
+    #     # Check whether the name of the note is correct, else ask to enter again
+    #     if (select_note %in% note_with_tag) {
+    #         break
+    #     } else {
+    #         writeLines("\nYou have entered an incorrect/misspelt name.")
+    #     }
+    # }
+
+    # # Open the note
+    # select_note_name <- paste0(select_note, ".txt")
+    # shell.exec(select_note_name)
 
 } else if (choice == "c") {
     # Display tags
