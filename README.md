@@ -1,4 +1,9 @@
 # NoteManageR
+
+
+<img src="https://github.com/bishwaruppaul/NoteManageR/blob/main/icon.ico" width="70"> 
+
+
 An R Script to manage (create/edit/read) offline plain text note files
 
 Inspired by a couple of great blogs by [Derek Sivers](https://sive.rs/plaintext) and [Szymon Krajewski](https://szymonkrajewski.pl/taking-notes-in-plaintext/), I created this R Script for my personal use. Taking notes in plain text is rather simplistic, easy, portable and future-proof; and this script provides a great way to organize and manage the notes. 
@@ -11,7 +16,7 @@ Note management is done via tags. When creating the note, you have the option of
 
 ### Disclaimer
 
-Though the R Script should run in any system (Windows/MacOS/Linux/others) with R installed, the Batch Script (noteApp.bat) will only work in Windows. I do not have the knowledge of Shell Scripting. If you can, please contribute Shell Scripts for Mac OS and Linux systems.
+Though the R Script should run in any system (Windows/MacOS/Linux/others) with R installed, the Batch Script (```noteApp.bat```) will only work in Windows. I do not have the knowledge of Shell Scripting. If you can, please contribute Shell Scripts for Mac OS and Linux systems.
 
 ### Important
 
@@ -23,9 +28,11 @@ Though the R Script should run in any system (Windows/MacOS/Linux/others) with R
 
 First, download/git clone the zip file, and unzip it on your machine at your desired location.
 
+Optional: You can create a shortcut of the batch script (```noteApp.bat```) in your desktop for easy access. If you do so, you can change the icon of the shortcut to the ```icon.ico``` file provided.
+
 **OPEN THE SCRIPT:**
 
-Double-click on the NoteApp.bat file to open (Windows only), and then follow the on-screen instructions. For MacOS/Linux systems, you may be able to run the script by sourcing the R Script (source("NoteManagerR.R")), or you can write a Shell Script to accompany the R script.
+Double-click on the ```noteApp.bat``` file to open (Windows only), and then follow the on-screen instructions. For MacOS/Linux systems, you may be able to run the script by sourcing the R Script (```source("NoteManagerR.R")```), or you can write a Shell Script to accompany the R script.
 
 **CREATE A NOTE:**
 
