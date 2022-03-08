@@ -71,7 +71,11 @@ if (choice == "o") {
 
 } else if (choice == "c") {
 
-    # Asking for tags of new note
+    # Display tags
+    writeLines("\nList of tags in existing notes: ")
+    print(tags_df, row.names = FALSE)
+
+    # Asking for choice of tags of new note
     writeLines("\n\nTags for new note: ")
     writeLines("\nTo use only existing tag(s), type 'e'")
     writeLines("\nTo use only new tag(s), type 'n'")
@@ -79,9 +83,6 @@ if (choice == "o") {
     tag_choice <- readLines("stdin", n = 1)
 
     if (tag_choice == "e") {
-        # Display tags
-        writeLines("\nList of tags in existing notes: ")
-        print(tags_df, row.names = FALSE)
 
         # Ask for tags
         writeLines("\nEnter the tag ID(s), separated by space: ")
