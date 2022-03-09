@@ -23,7 +23,7 @@ for (i in all_notes) {
 }
 
 # Create a dataframe of unique tags and display to output
-all_tags <- unique(tag_list)
+all_tags <- sort(unique(tag_list))
 tags_df <- as.data.frame(cbind(1:length(all_tags), all_tags))
 colnames(tags_df) <- c("ID", "Tag")
 
