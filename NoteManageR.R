@@ -2,7 +2,8 @@
 
 # Asking user for choice - whether to create a new file or open existing
 writeLines("\nType 'c' to see the tags and create a new note
-Type 'o' see the tags and open an existing note: ")
+Type 'o' see the tags and open an existing note
+Type 's' to search the note filenames using keyword: ")
 choice <- readLines("stdin", n = 1)
 
 # Get list of all notes in the directory
@@ -136,4 +137,33 @@ if (choice == "o") {
 
     # Open the note in system text editor
     shell.exec(created_file)
+
+} else if (choice == "s") {
+    # Ask for keyword
+    writeLines("\nType the search term: ")
+    keyword <- readLines("stdin", n = 1)
+
+    # Search for keyword in filenames
+    key_search <- all_notes[which(grepl(keyword, all_notes))]
+
+    # Put the searched files in a dataframe
+    key_df <- as.data.frame(cbind(1:length(key_search), key_search))
+    colnames(key_df) <- c("ID", "Filename")
+
+    # Display the notes with the selected tag present
+    writeLines("\nNotes containing the search term:\n")
+    print(key_df, row.names = FALSE)
+
+    # Ask user to select a note, or go back to main screen
+    writeLines("\nIf you would like to open a note, enter ID
+    Else enter 'q' to go back to main screen: ")
+    open_or_close <- readLines("stdin", n = 1)
+
+    if (grepl("[a-z]", open_or_close)) {
+        quit()
+    } else {
+        # Open the note
+        select_note <- key_df$Filename[key_df$ID == as.integer(open_or_close)]
+        shell.exec(select_note)
+    }
 }
