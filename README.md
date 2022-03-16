@@ -34,12 +34,16 @@ Optional: You can create a shortcut of the batch script (```noteApp.bat```) in y
 
 Double-click on the ```noteApp.bat``` file to open (Windows only), and then follow the on-screen instructions. For MacOS/Linux systems, you may be able to run the script by sourcing the R Script (```source("NoteManagerR.R")```), or you can write a Shell Script to accompany the R script.
 
+**SEARCH FOR A NOTE:**
+
+Type 's' to search for a note using search terms, which can be words or numbers. The search will look for the search term in the filenames of the notes, and will return a list with the filenames containing the search term. Go through the list, and then enter the ID of the file to open it in your system text editor, or type 'q' to go back to the main screen.
+
 **CREATE A NOTE:**
 
-Type 'c' to create a new note. The script will display a list of tags present in existing notes for convenience. You can enter existing tag(s) for your new note or enter new tag(s). Then, enter the filename for the new note. Following this, the new note file will open in your system text editor. The new note will have the tags (Tags: ...) and timestamp (Created: ...) at the top. Keeping these top two lines intact, write anything you want inside the note, and save the file.
+Type 'c' to create a new note. The script will display a list of tags present in existing notes for convenience. You will have the option of choose from existing tag(s), create new tag(s), or both. Type 'e' to choose from existing tag(s), and then enter the tag IDs. Type 'n' to create new tag(s), followed by entering the new tag(s). Type 'm' to use a combination of existing and new tag(s), then first enter the ID(s) of the existing tag(s), and then enter the new tag(s). Then, enter the filename for the new note. Following this, the new note file will open in your system text editor. The new note will have the tags (Tags: ...) and timestamp (Created: ...) at the top. Keeping these top two lines intact, write anything you want inside the note, and save the file.
 
 **READ/EDIT A NOTE**
 
-Type 'o' to open an existing note. The script will display a list of tags present in existing notes. After you enter one of the tags at the prompt, a list of notes with the tag present will be displayed. To open a note from the list, enter the name of the note, which will open the file in your system text editor. You can read/edit the file. If editing, keep the top two lines intact and save the file at the end.
+Type 'o' to open an existing note. The script will display a list of tags present in existing notes. After you enter the ID of one of the tags, a list of notes with the tag present will be displayed. To open a note from the list, enter the ID of the note, which will open the file in your system text editor. You can read/edit the file. If editing, keep the top two lines intact and save the file at the end.
 
 Enjoy!
